@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "HelloWorldNoJsx";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section JavaScript
+{
+    /** @@jsx React.DOM */
+    var HelloMessage = React.createClass({
+        render: function() {
+            return React.DOM.div(null, 'Hello ' + this.props.name);
+        }
+    });
+    
+    React.renderComponent(HelloMessage( { name: "John" }), $('#mountNode')[0]);
+}

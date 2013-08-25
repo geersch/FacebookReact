@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section JavaScript
+{
+    /** @@jsx React.DOM */
+    var HelloMessage = React.createClass({
+        render: function() {
+            return <div>{'Hello ' + this.props.name}</div>;
+        }
+    });
+    
+    React.renderComponent(<HelloMessage name="John" />, $('#mountNode')[0]);
+}

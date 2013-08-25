@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Component";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section JavaScript
+{
+    /** @@jsx React.DOM */
+    var Hello = React.createClass({
+        render: function() {
+            return <p class="label label-info">{ 'Hello, ' + this.props.name }</p>;
+        }
+    });
+    
+    React.renderComponent(<Hello name="Ruben" />, $('#mountNode')[0]);
+}
